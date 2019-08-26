@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "商品详情",
+    "usingComponents": {
+        "share-button": "plugin://wx56c8f077de74b07c/share-button"
+    }
+}

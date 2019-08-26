@@ -1,0 +1,56 @@
+<!--pages/indexJY/indexJY.wxml-->
+<!-- <block>
+  <view class="wrap" wx:for="{{list}}" wx:key="item.id">
+    <view class="box"  bindtap="pushPlan" data-index="{{item.id}}">
+      <view class="boxLeft">{{item.name}}</view>
+      <view class="boxRight"><text class="iconfont icon-xiala"></text></view>
+    </view>
+  </view>
+</block> -->
+
+<block wx:for-items="{{lists}}" wx:key="{{item.id}}">
+    <view class="kind-list-item">
+      <view id="{{item.id}}" data-nonoData="{{item}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle" data-shuju="{{item.xiaji}}">
+       <view class="kind-list-text">{{item.name}}
+       <text class="iconfont icon-xiala" wx:if="{{item.open}}"></text>
+       <text class="iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing" wx:else></text>
+       </view>
+     </view>
+
+     <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+       <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+         <block wx:for-items="{{item.xiaji}}" wx:for-item="page" wx:key="*item">
+          <block>
+            <view class="navigator" bindtap="pushPlan" id="{{page.id}}">
+             <view class="navigator-text">{{page.name}}</view>
+             <!-- icon -->
+             <!-- <view class="navigator-arrow"></view> -->
+             <text class="iconfont icon-xiala" wx:if="{{page.open}}"></text>
+            <text class="iconfont icon-tiaozhuanqianwangyoujiantouxiangyouxiayibuxianxing" wx:else></text>
+           </view>
+          </block>
+
+          <view class="kind-list-item-bd {{page.open ? 'kind-list-item-bd-show' : ''}}">
+              <view class="navigator-box {{page.open ? 'navigator-box-show' : ''}}">
+                <block wx:for-items="{{sonList}}" wx:for-item="sonList" wx:key="*item">
+                  <view class="navigator navigator1" bindtap="jumpPlan" data-index="{{sonList}}">
+                    <view class="navigator-text">{{sonList.title}}</view>
+                    <!-- icon -->
+                    <view class="navigator-arrow"></view>
+                  </view>
+                </block>
+              </view>
+            </view>
+           
+
+         </block>
+       </view>
+     </view>
+
+
+     
+
+     
+
+   </view>
+ </block>

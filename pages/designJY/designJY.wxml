@@ -1,0 +1,137 @@
+<!--pages/designJY/designJY.wxml-->
+<view>
+  <view class="title">{{storage.title}}</view>
+
+  <view class="content">
+    <text class="contentTitle">请按顺序选择下方基因类型</text>
+    <view class="zhixiang">
+      <!-- <view wx:for="{{typeList}}" wx:for-index="index" wx:key="{{item.id}}" bindtap="detailJy" data-list="{{item}}" id="{{index}}">
+        <text class="zxk {{zcolors==index?'active':''}}">{{item.title}}</text>
+        <text class="iconfont icon-arrow-"></text>
+      </view> -->
+
+      <view bindtap="detailJy" data-list="{{typeList[0]}}" id="{{0}}">
+        <text class="zxk {{zcolors==0?'active':''}}">{{typeList[0].title}}</text>
+        <text class="iconfont icon-arrow-"></text>
+      </view>
+      <view bindtap="detailJy" data-list="{{typeList[1]}}" id="{{1}}">
+        <text class="zxk {{zcolors1==1?'active':''}}">{{typeList[1].title}}</text>
+        <text class="iconfont icon-arrow-"></text>
+      </view>
+      <view bindtap="detailJy" data-list="{{typeList[2]}}" id="{{2}}">
+        <text class="zxk {{zcolors2==2?'active':''}}">{{typeList[2].title}}</text>
+        <!-- <text class="iconfont icon-arrow-"></text> -->
+      </view>
+
+
+    </view>
+    <view class="contentBottom">
+      <text class="complete" bindtap="complete">完成设计</text>
+    </view>
+  </view>
+
+  <view class="information">载体信息</view>
+
+  <view class="informationConten">
+    <view> 
+      <text>载体ID：<text class="details">{{storage.id}}</text></text>
+    </view>
+    <view> 
+      <text>载体名称：<text class="details">{{storage.title}}</text></text>
+    </view>
+    <view> 
+      <text>载体类型：<text class="details">{{storage.type_cn}}</text></text>
+    </view>
+    <view> 
+      <text>载体大小：<text class="details">{{storage.size}}</text></text>
+    </view>
+    <!-- <view wx:for="{{typeList}}" wx:key="{{index}}"> 
+      <text>{{item.title}}：<text class="details">{{shunxu.shunxu==0?zhx.title:shunxu.shunxu==1?orf.title:''}}</text></text>
+    </view> -->
+    <view> 
+      <text>{{typeList[0].title}}：<text class="details">{{zhx.title}}</text></text>
+    </view>
+    <view> 
+      <text>{{typeList[1].title}}：<text class="details">{{orf.title}}</text></text>
+    </view>
+    <view> 
+      <text>{{typeList[2].title}}：<text class="details">{{qdz.title}}</text></text>
+    </view>
+
+    <!-- <view> 
+      <text>载体描述：<text class="edit">[编辑]</text></text>
+      <textarea placeholder="请点击这里输入内容...."></textarea>
+    </view> -->
+
+  </view>
+
+  <view class="information">产品服务</view>
+
+  <view class="service">
+    <view class="serviceTitlte">载体构建服务</view>
+    <view class="serviceDetail">· 交付内容： <text>无</text></view>
+    <view class="serviceDetail">· 克隆宿主： <text>无</text></view>
+    <view class="servicePrice" wx:if="{{priceData.price}}">价格： <text class="displayPrice">￥{{priceData.price}}</text></view>
+    <view class="servicePrice" wx:else>价格： <text>无</text></view>
+    <view class="ljBuy" bindtap="buy"><text>立即购买</text></view>
+  </view>
+
+  <!-- <view class="serviceBottom">
+    <view class="serviceTitlte">下游服务</view>
+    <view class="serviceDetail">· 质粒DNA提取： <text class="serviceBottomLeft">￥500</text></view>
+    <view class="serviceDetail">· 显微镜注射载体： <text class="serviceBottomLeft">￥500</text></view>
+    <view class="serviceTitlte">相关服务</view>
+    <view class="serviceDetail">· 对照载体： <text class="serviceBottomLeft">￥600</text></view>
+    <view class="ljBuy"><text>购买下游服务</text></view>
+  </view> -->
+
+  <view class="boxBottom">
+    <text>三合道芯汇科技 电话：18181877518</text>
+  </view>
+
+</view>
+
+
+
+<view class="frame" catchtouchmove="move" wx:if="{{isShow}}">
+  <view class="frameBox">
+    <view class="frameConten">
+      <view class="frameContenT">选择Promoter数据库 <text class="iconfont icon-cha" bindtap="closeT"></text></view>
+      
+      <view class="frameInfo">
+        <view class="framInfoT">常用{{shunxu.title}}</view>
+        <view class="framInfoT1">{{storage.title}}广泛性表达{{shunxu.title}}</view>
+
+        <view class="table">
+          <view class="tr bg-w">
+            <view class="th">名称</view>
+            <view class="th">长度</view>
+            <view class="th">描述</view>
+            <view class="th">注释</view>
+            <view class="th">  </view>
+          </view>
+          <block wx:for="{{dataList}}" wx:key="dataList.id">
+            <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+              <view class="td">{{item.title}}</view>
+              <view class="td">{{item.length}}</view>
+              <view class="td">{{item.notes}}</view>
+              <view class="td">{{item.describe}}</view>
+              <view class="td bg-add" bindtap="addData" data-list="{{item}}" id="{{colors}}">添加</view>
+            </view>
+            <view class="tr" wx:else>
+              <view class="td">{{item.title}}</view>
+              <view class="td">123156</view>
+              <view class="td">dfsaf</view>
+              <view class="td">aaaeww</view>
+              <view class="td bg-add" bindtap="addData" data-list="{{item}}" id="{{colors}}">添加</view>
+            </view>
+          </block>
+        </view>
+
+        <!-- <view class="more">查看更多</view> -->
+
+      </view>
+
+    </view>
+  </view>
+</view>

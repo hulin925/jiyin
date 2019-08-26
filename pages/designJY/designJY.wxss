@@ -1,0 +1,273 @@
+/* pages/designJY/designJY.wxss */
+
+.title{
+  background-color:#41a578;
+  color:#fff;
+  padding:0 20rpx;
+  line-height:70rpx;
+  height:70rpx;
+  border-bottom:14rpx solid #ececec;
+}
+.content{
+  font-size:30rpx;
+  padding:0 20rpx;
+  border-bottom:14rpx solid #ececec;
+}
+.contentTitle{
+  background-color:#feead9;
+  border-left:6rpx solid #f8a030;
+  padding:8rpx 20rpx;
+}
+.zhixiang{
+  padding:160rpx 0;
+}
+.zhixiang view{
+  float:left;
+  margin-bottom:20rpx;
+}
+.zxk{
+  border:4rpx solid #c50e82;
+  padding:10rpx 30rpx;
+  color:#c2007b;
+  margin:0 20rpx;
+  height:60rpx;
+  line-height:60rpx;
+}
+.icon-arrow-{
+  color:#41a578;
+  font-size:48rpx;
+  margin-top:30rpx;
+  vertical-align: middle;
+}
+.contentBottom{
+  text-align:right;
+  color:#fff;
+  height:70rpx;
+}
+.complete{
+  font-size:32rpx;
+  padding:20rpx;
+  background-color:#41a578;
+  letter-spacing:5rpx;
+  line-height:60rpx;
+}
+.information{
+  height:70rpx;
+  line-height:70rpx;
+  color:#fff;
+  background-color:#41a578;
+  padding:0 20rpx;
+  border-bottom:14rpx solid #ececec;
+}
+
+.informationConten{
+  padding:20rpx;
+  border-bottom:14rpx solid #ececec;
+}
+.informationConten view{
+  font-size:32rpx;
+  border-bottom:1rpx solid #ededed;
+  line-height:70rpx;
+  overflow:hidden;
+}
+.edit{
+  color:#06a9fe;
+}
+.informationConten textarea{
+  width:92%;
+  height:200rpx;
+  border:1px solid #bdbdbd;
+  padding:20rpx;
+  line-height:40rpx;
+  color:#797979;
+}
+
+.service{
+  padding:20rpx 20rpx 10rpx;
+  border-bottom:6rpx solid #d3d3d3;
+  font-size:32rpx;
+}
+.serviceTitlte{
+  font-size:36rpx;
+}
+.serviceDetail{
+  padding-left:20rpx;
+  line-height:50rpx;
+  height:50rpx;
+  color:#7a7a7a;
+}
+.servicePrice{
+  font-size:30rpx;
+  margin-top:40rpx;
+  padding-left:40rpx;
+}
+.servicePrice .displayPrice{
+  color:red;
+}
+.ljBuy{
+  margin-top:20rpx;
+  text-align:right;
+}
+.ljBuy text{
+  color:#fff;
+  background-color:#ecae36;
+  font-size:32rpx;
+  padding:20rpx;
+  letter-spacing:5rpx;
+  line-height:60rpx;
+}
+.serviceBottom .ljBuy text{
+  background-color:#0096ff;
+}
+.serviceBottom{
+  font-size:32rpx;  
+  padding:20rpx 20rpx 10rpx;
+  border-bottom:14rpx solid #ececec;
+}
+
+.boxBottom{
+  line-height:100rpx;
+  text-align:center;
+  background-color: #f5f4f4;
+  font-size:30rpx;
+}
+.serviceDetail .serviceBottomLeft{
+  float:right;
+  padding-right:20rpx;
+  color:#fd4646;
+}
+
+
+
+
+
+.frame{
+  /* position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:0;
+  background-color:rgba(0,0,0,.4);
+  height: 100%;
+  overflow: hidden; */  
+  /* display: modaldisplay; */
+  position:fixed;
+  width:100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index:999;
+  background-color:rgba(0,0,0,0.5);
+  overflow: auto;
+}
+.frameBox{
+  padding:20rpx;
+}
+.frameConten{
+  padding:20rpx;
+  background-color: #fff;
+}
+.frameContenT{
+  height:70rpx;
+  line-height:70rpx;
+  border-bottom:1px solid #ededed
+}
+.frameContenT .icon-cha{
+  float:right;
+  padding:0 20rpx;
+}
+.frameInfo{
+  padding:10rpx;
+}
+.framInfoT{
+  height:70rpx;
+  line-height:70rpx;
+  background-color: #023a69;
+  color:#fff;
+  padding-left:12rpx;
+  font-size:36rpx;
+}
+.framInfoT1{
+  height:60rpx;
+  line-height:60rpx;
+  font-size:36rpx;
+}
+
+.table {
+  font-size:34rpx;
+  text-align:center;
+}
+.tr {
+  height:70rpx;
+  line-height:70rpx;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: #e4e4e4;
+}
+.td {
+    width:20%;
+    overflow:hidden;
+    text-overflow:ellipsis;/* 超出部分显示省略号 */
+    white-space: nowrap;/*规定段落中的文本不进行换行 */
+}
+.th {
+  width:20%;
+}
+.bg-w{
+  height:70rpx;
+  line-height:70rpx;
+  background-color: #023a69;
+  color:#fff;
+}
+.bg-g{
+  background: #f5f3f3;
+}
+.bg-add{
+  color:#023a69;
+}
+.more{
+  height:70rpx;
+  line-height:70rpx;
+  color:#023a69;
+  font-size:32rpx;
+}
+
+.bodyLock{
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    z-index: 0;
+}
+.hide{
+  display:none;
+}
+.show{
+  display:block;
+}
+
+.details{
+  color:#1a7bff;
+}
+.active{
+  border:4rpx solid green;
+  color:green;
+  position:relative;
+}
+.active::before{
+  position:absolute;
+  content:'';
+  width:60rpx;
+  height:60rpx;
+  background-image: url('https://web.3fgj.com/imgJY/gou.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-position: center center; */
+  bottom:-15rpx;
+  right:-15rpx;
+}
+
+
